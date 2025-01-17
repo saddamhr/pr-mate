@@ -11,17 +11,33 @@ const InputForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setData('');
     try {
       const response = await axios.post('http://localhost:5001/api/generate', {
         title,
       });
-      console.log(response.data);
-      setData(response.data);
+      const generatedText = response.data;
+      typeText(generatedText);
     } catch (error) {
       console.error('Error generating output:', error);
     } finally {
       setLoading(false);
     }
+  };
+
+  // Typing effect function
+  const typeText = (text) => {
+    let index = 0;
+    setData(text[0]);
+    const interval = setInterval(() => {
+      index++;
+      if (index < text.length) {
+        setData((prevData) => prevData + text[index]);
+      } else {
+        clearInterval(interval);
+        setLoading(false);
+      }
+    }, 20);
   };
 
   return (
@@ -37,8 +53,8 @@ const InputForm = () => {
           required
           placeholder="Enter issue or task title (e.g., CRM-01: Details page not showing)"
         />
-        <button type="submit" className="form-button">
-          Generate
+        <button type="submit" className="form-button" disabled={loading}>
+          {loading ? 'Generating...' : 'Generate'}
         </button>
       </form>
 
