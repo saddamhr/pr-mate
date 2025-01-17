@@ -21,11 +21,17 @@ body {
 }
 
 .form-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
   text-align: center;
-  color: #333;
+  color: #2222229c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
 }
 
 .ticket-form {
@@ -54,7 +60,7 @@ body {
 }
 
 .form-button {
-  background-color: #28a745;
+  background-color: #c15093d9;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -65,7 +71,7 @@ body {
 }
 
 .form-button:hover {
-  background-color: #218838;
+  background-color: #c15094b8;
 }
 
 .form-buttonfocus {
@@ -94,6 +100,74 @@ body {
 
 .skeleton-text:nth-child(3) {
   width: 60%;
+}
+/* Copy Button */
+.copy-button {
+  margin-top: 10px;
+  background-color: #9e51b4b8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.copy-button:hover {
+  background-color: #9f51b49c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.copy-button:active {
+  background-color: #822b9b7a;
+  transform: translateY(2px);
+}
+
+/* Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2d5b80;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+.toast-notification svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+/* Toast Animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
 
 @keyframes skeleton-loading {
