@@ -16,15 +16,17 @@ const InputForm = () => {
   const [data, setData] = useState(null);
   const [title, setTitle] = useState('');
   const [loading, setLoading] = useState(false);
+  const [typing, setTyping] = useState(false);
   const { toastVisible, showToast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setTyping(true);
     setData('');
     try {
       const generatedText = await fetchGeneratedText(title);
-      typeText(generatedText, setData, setLoading);
+      typeText(generatedText, setData, setLoading, setTyping);
     } catch (error) {
       console.error('Error generating output:', error);
     } finally {
@@ -37,7 +39,7 @@ const InputForm = () => {
       <h2 className="form-title">Generate Ticket Details</h2>
       <form className="ticket-form" onSubmit={handleSubmit}>
         <InputField value={title} onChange={(e) => setTitle(e.target.value)} />
-        <SubmitButton loading={loading} />
+        <SubmitButton loading={loading} typing={typing} />
       </form>
 
       {loading ? (

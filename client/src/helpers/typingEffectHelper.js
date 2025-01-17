@@ -1,4 +1,4 @@
-export const typeText = (text, setData, setLoading) => {
+export const typeText = (text, setData, setLoading, setTyping) => {
   let index = 0;
   let resultText = ''; // Accumulating the result in one variable
 
@@ -10,6 +10,7 @@ export const typeText = (text, setData, setLoading) => {
     if (index === text.length) {
       clearInterval(interval);
       setLoading(false); // Stop the loading indicator when done
+      setTyping(false);
     }
   }, 20); // Typing speed
 };
