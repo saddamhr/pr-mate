@@ -1,0 +1,32 @@
+.form-button {
+  background-color: #c15093d9;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #c15094b8;
+}
+
+.form-buttonfocus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .form-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
