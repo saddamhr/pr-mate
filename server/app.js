@@ -1,22 +1,24 @@
 import express from "express";
-import bodyParser from "body-parser";
 import cors from "cors";
-import generateText from "./models/textGenerator.js";
+import bodyParser from "body-parser";
+import textRoutes from "./routes/textRoutes.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
+import logger from "./utils/logger.js";
+import config from "./config/config.js";
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post("/api/generate", async (req, res) => {
-  const { title } = req.body;
-  try {
-    const result = await generateText(title);
-    res.json(result);
-  } catch (error) {
-    console.error("Error generating text:", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
+// Routes
+app.use("/api", textRoutes);
 
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Global Error Handler
+app.use(errorHandler);
+
+// Start Server
+app.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`);
+});
