@@ -122,8 +122,12 @@ npm start
 
 ---
 
-## Screenshot
+## Demo & Screenshot
+
+https://github.com/user-attachments/assets/7f71b2ba-8a01-4941-9a79-4e2684d7a261
+
 <img width="1507" alt="Screenshot 2025-01-18 at 7 33 20 PM" src="https://github.com/user-attachments/assets/dacab1ed-6fa3-41a5-9092-047d00298c50" />
+
 
 ## Contribution
 
