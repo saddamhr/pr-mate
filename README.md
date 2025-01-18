@@ -1,7 +1,3 @@
-Here's the updated README with the Jira integration section removed:
-
----
-
 # PR Mate
 
 A customizable AI-powered application to streamline your daily workflows. This app automates tasks such as generating ticket details (branch names, PR descriptions, and commit messages). It leverages modern technologies like React, Node.js, and the Ollama AI model.
