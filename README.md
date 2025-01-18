@@ -122,10 +122,8 @@ npm start
 
 ---
 
-## Demo
-
-[Include a screen recording or screenshots of your app in action here.]
-
+## Screenshot
+<img width="1507" alt="Screenshot 2025-01-18 at 7 33 20 PM" src="https://github.com/user-attachments/assets/dacab1ed-6fa3-41a5-9092-047d00298c50" />
 ---
 
 ## Contribution
@@ -140,7 +138,3 @@ Contributions are welcome! Follow the steps below:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Let me know if you'd like additional edits! 🚀
