@@ -1,4 +1,6 @@
 # PR Mate
+<img width="1507" alt="Screenshot 2025-01-18 at 7 33 20 PM" src="https://github.com/user-attachments/assets/dacab1ed-6fa3-41a5-9092-047d00298c50" />
+
 
 A customizable AI-powered application to streamline your daily workflows. This app automates tasks such as generating ticket details (branch names, PR descriptions, and commit messages). It leverages modern technologies like React, Node.js, and the Ollama AI model.
 
@@ -106,10 +108,46 @@ npm start
 - **Response**:
   ```json
   {
-    "branchName": "feature/short-description",
-    "prDescription": "Detailed pull request description",
-    "commitMessage": "Short commit message"
-  }
+    "data": "Here is the generated output based on the ticket title \"BUG-445: Resolve issue with image rendering on mobile devices\":\n\n  - Branch Name: bug-fix/4465\n  - PR Description:\n    In this pull request, we will resolve the issue with image rendering on mobile devices (BUG-445). The current implementation fails to render images correctly due to an incorrect width and height calculation. We will implement a new solution that uses responsive image sizes to ensure correct rendering regardless of device size or screen resolution.\n  - Commit Message:\n    \"Resolve BUG-445: Fix image rendering issue on mobile devices by using responsive image sizes\"",
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+        "content-length": "655",
+        "content-type": "application/json; charset=utf-8"
+    },
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "adapter": [
+            "xhr",
+            "http",
+            "fetch"
+        ],
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {},
+        "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+        },
+        "method": "post",
+        "url": "http://localhost:5001/api/generate",
+        "data": "{\"title\":\"BUG-445: Resolve issue with image rendering on mobile devices\"}"
+    },
+    "request": {}
+}
   ```
 
 ---
@@ -125,8 +163,6 @@ npm start
 ## Demo & Screenshot
 
 https://github.com/user-attachments/assets/7f71b2ba-8a01-4941-9a79-4e2684d7a261
-
-<img width="1507" alt="Screenshot 2025-01-18 at 7 33 20 PM" src="https://github.com/user-attachments/assets/dacab1ed-6fa3-41a5-9092-047d00298c50" />
 
 
 ## Contribution
