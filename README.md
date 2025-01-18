@@ -147,7 +147,7 @@ npm start
         "data": "{\"title\":\"BUG-445: Resolve issue with image rendering on mobile devices\"}"
     },
     "request": {}
-}
+  }
   ```
 
 ---
